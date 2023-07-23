@@ -22,14 +22,16 @@ public class DFS_Stack {
             int node = stack.pop();
             sb.append(node + " ");
 
-            for (int linkedNode : graph[node]) {
-                if (!visited[linkedNode]) {
-                    stack.push(linkedNode);
-                    visited[linkedNode] = true;
+            for (int LinkedNode : graph[node]) {
+                if (!visited[LinkedNode]) {
+                    stack.push(LinkedNode);
+                    visited[LinkedNode] = true;
                 }
             }
         }
 
+
         return sb.toString();
     }
+
 }
