@@ -10,7 +10,7 @@ public class N_Rooks {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        System.out.print("Enter N : ");
         N = sc.nextInt();
         map = new int[N][N];
         visited = new int[N];
