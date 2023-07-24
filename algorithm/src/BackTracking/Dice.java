@@ -8,7 +8,7 @@ public class Dice {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter N : ");
+        System.out.print("N : ");
         N = sc.nextInt();
         result = new int[N];
         int diceNum = 0;
@@ -16,7 +16,7 @@ public class Dice {
         roll(diceNum);
     }
 
-    private static void roll(int diceNum) {
+    public static void roll(int diceNum) {
         if (diceNum == N) {
             System.out.println(Arrays.toString(result));
             return;
@@ -26,7 +26,6 @@ public class Dice {
                 diceNum++;
                 roll(diceNum);
                 diceNum--;
-                result[diceNum] = 0;
             }
         }
     }
