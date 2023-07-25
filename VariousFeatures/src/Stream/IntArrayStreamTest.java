@@ -1,0 +1,24 @@
+package Stream;
+
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class IntArrayStreamTest {
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5};
+
+        for(int i : arr) {
+            System.out.println(i);
+        }
+
+        IntStream is = Arrays.stream(arr);
+        is.forEach(i -> System.out.println(i));
+
+        int sum = Arrays.stream(arr).sum();
+        System.out.println(sum);
+
+        long count = Arrays.stream(arr).count();
+        System.out.println("count : " + count);
+    }
+}
