@@ -6,24 +6,15 @@ import java.io.IOException;
 
 public class FileExceptionHandling {
     public static void main(String[] args) {
-        FileInputStream fis = null;
+//        FileInputStream fis = null;
 
-        try {
-            fis = new FileInputStream("a.txt");
+        try(FileInputStream fis = new FileInputStream("a.txt")) {
+            System.out.println("read");
         } catch (FileNotFoundException e) {
-            System.out.println(e);
-            return;
-        } finally {
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            System.out.println("finally");
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         System.out.println("end");
-
     }
 }
